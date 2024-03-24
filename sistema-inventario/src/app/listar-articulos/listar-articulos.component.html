@@ -1,0 +1,51 @@
+<h2>Listado de Articulos</h2> 
+<p align="right" mat-list-item routerLink="/articulos/agregar">
+    <a mat-flat-button color="primary"><mat-icon>add</mat-icon>Agregar articulo</a>
+</p>   
+
+<table mat-table [dataSource]="articulos" class="mat-elevation-z8" style="width:
+    100%;">
+
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>Codigo</th>
+        <td mat-cell *matCellDef="let articulo"> {{articulo.id}} </td>
+    </ng-container>
+    <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td mat-cell *matCellDef="let articulo"> {{articulo.nombre}} </td>
+    </ng-container>
+    <ng-container matColumnDef="categoria">
+        <th mat-header-cell *matHeaderCellDef>Categoria</th>
+        <td mat-cell *matCellDef="let articulo"> {{articulo.categoria}} </td>
+    </ng-container>
+    <ng-container matColumnDef="stock">
+        <th mat-header-cell *matHeaderCellDef>Stock</th>
+        <td mat-cell *matCellDef="let articulo"> {{articulo.stock}} </td>
+    </ng-container>
+    <ng-container matColumnDef="precio">
+        <th mat-header-cell *matHeaderCellDef>Precio</th>
+        <td mat-cell *matCellDef="let articulo"> {{articulo.precio}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="editar">
+        <th mat-header-cell *matHeaderCellDef>Editar</th>
+        <td mat-cell *matCellDef="let articulo">
+            <a mat-icon-button [routerLink]="['/articulos/editar', articulo.id]">
+                <mat-icon color="primary">edit</mat-icon>
+            </a>
+        </td>
+    </ng-container>
+    <ng-container matColumnDef="eliminar">
+        <th mat-header-cell *matHeaderCellDef>Eliminar</th>
+        <td mat-cell *matCellDef="let articulo">
+            <button (click)="eliminarArticulo(articulo)" mat-icon-button>
+                <mat-icon color="warn">delete</mat-icon>
+            </button>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['id','nombre', 'categoria', 'stock', 'precio', 'editar',
+        'eliminar']"></tr>
+    <tr mat-row *matRowDef="let fila; columns: ['id','nombre', 'categoria', 'stock', 'precio',
+        'editar', 'eliminar'];"></tr>
+</table>

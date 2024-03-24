@@ -1,0 +1,45 @@
+<h2>Editar compra <mat-icon>store</mat-icon></h2>
+<form (ngSubmit)="onSubmit()" #formCompra="ngForm">
+    <p>
+
+        <mat-form-field>
+            <input matInput name="n_factura" [(ngModel)]="compraModel.n_factura"
+                type="text"
+                placeholder="N° Factura">
+        </mat-form-field>
+    </p>
+    <p>
+
+        <mat-form-field>
+            <input matInput name="cantidad" [(ngModel)]="compraModel.cantidad"
+                type="number"
+                placeholder="Cantidad">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input matInput name="precio" [(ngModel)]="compraModel.precio"
+                type="number"
+                placeholder="P.Unitario">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input matInput name="total" [(ngModel)]="compraModel.total"
+                type="number"
+                placeholder="Total">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input matInput name="fecha_registro" [(ngModel)]="compraModel.fecha_registro"
+                type="text"
+                placeholder="Fecha">
+        </mat-form-field>
+    </p>
+    <p>
+        <button type="submit" mat-flat-button color="accent">Guardar</button>
+        &nbsp;
+        <button (click)="volver()" type="button" mat-flat-button color="primary">Volver</button>
+    </p>
+</form>

@@ -1,0 +1,51 @@
+<h2>Agregar Empleado <mat-icon>add</mat-icon></h2>
+<form (ngSubmit)="onSubmit()" #formEmpleado="ngForm">
+
+    <p>
+
+        <mat-form-field>
+            <input matInput name="nombre" [(ngModel)]="empleadoModel.nombre"
+                type="text"
+                placeholder="Nombre">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input matInput name="apellido" [(ngModel)]="empleadoModel.apellido"
+                type="text"
+                placeholder="Apellido">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input matInput name="dni" [(ngModel)]="empleadoModel.dni"
+                type="number"
+                placeholder="Dni">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input matInput name="telefono" [(ngModel)]="empleadoModel.telefono"
+                type="number"
+                placeholder="Telefono">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input matInput name="direccion" [(ngModel)]="empleadoModel.direccion"
+                type="text"
+                placeholder="Direccion">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input matInput name="correo" [(ngModel)]="empleadoModel.correo"
+                type="text"
+                placeholder="Correo">
+        </mat-form-field>
+    </p>
+        
+    <p>
+        <button type="submit" mat-flat-button color="accent">Guardar</button>
+    </p>
+</form>

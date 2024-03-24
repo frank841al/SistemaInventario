@@ -1,0 +1,40 @@
+<h2>Agregar articulo <mat-icon>store</mat-icon></h2>
+<mat-card>
+   
+<form (ngSubmit)="onSubmit()" #formArticulo="ngForm">
+
+    
+    <p>
+
+        <mat-form-field>
+            <input matInput name="nombre" [(ngModel)]="articuloModel.nombre"
+                type="text"
+                placeholder="Nombre">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input matInput name="categoria" [(ngModel)]="articuloModel.categoria"
+                type="text"
+                placeholder="Categoria">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input matInput name="stock" [(ngModel)]="articuloModel.stock"
+                type="number"
+                placeholder="Stock">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input matInput name="precio" [(ngModel)]="articuloModel.precio"
+                type="number"
+                placeholder="Precio">
+        </mat-form-field>
+    </p>
+    <p>
+        <button type="submit" mat-flat-button color="accent">Guardar</button>
+    </p>
+</form>
+</mat-card>

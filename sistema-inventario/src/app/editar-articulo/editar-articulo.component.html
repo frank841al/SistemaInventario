@@ -1,0 +1,36 @@
+<h2>Editar Articulo <mat-icon>store</mat-icon></h2>
+<form (ngSubmit)="onSubmit()" #formArticulo="ngForm">
+    <p>
+        <mat-form-field>
+            <input matInput name="nombre" [(ngModel)]="articulo.nombre"
+                type="text"
+                placeholder="Nombre">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input matInput name="categoria" [(ngModel)]="articulo.categoria"
+                type="text"
+                placeholder="Categoria">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input matInput name="stock" [(ngModel)]="articulo.stock"
+                type="number"
+                placeholder="Stock">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input matInput name="precio" [(ngModel)]="articulo.precio"
+                type="number"
+                placeholder="Precio">
+        </mat-form-field>
+    </p>
+    <p>
+        <button type="submit" mat-flat-button color="accent">Guardar</button>
+        &nbsp;
+        <button (click)="volver()" type="button" mat-flat-button color="primary">Volver</button>
+    </p>
+</form>
